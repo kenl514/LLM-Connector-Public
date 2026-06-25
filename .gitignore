@@ -2,3 +2,6 @@
 .env.*
 .ai/
 .test/
+
+# ignore ALL dot-directories (.ai, .test, .vscode, .idea, etc.)
+.*/
