@@ -1,6 +1,6 @@
 {
   "_comment": "SHARED LLM-provider registry — the source of truth for every app + language. Edit here; each language's thin client reads this file. Flags are explicit so non-Python clients don't need to re-derive them.",
-  "version": "0.4.22",
+  "version": "0.5.0",
   "consent_notice": "Using your subscription through third-party software may conflict with some providers' terms of service. By enabling this, you confirm you have read the provider's Terms of Service and accept any risk to your own account.",
   "providers": [
     {
@@ -14,15 +14,15 @@
         "ZAI_API_KEY",
         "Z_AI_API_KEY"
       ],
-      "default_model": "glm-5.2",
+      "default_model": "glm-5.3",
       "models": [
+        "glm-5.3",
+        "glm-5.3-flash",
         "glm-5.2",
+        "glm-5.2-fast",
         "glm-5.1",
         "glm-5",
-        "glm-5-turbo",
-        "glm-4.7",
-        "glm-4.6",
-        "glm-4.5-air"
+        "glm-4.7-flash"
       ],
       "cli_bin": "",
       "cli_cred": "",
@@ -46,11 +46,13 @@
       "env_keys": [
         "KIMI_CODING_API_KEY"
       ],
-      "default_model": "kimi-latest",
+      "default_model": "kimi-k3",
       "models": [
-        "kimi-latest",
-        "moonshot-k2-chat",
-        "moonshot-k2-long"
+        "kimi-k3",
+        "kimi-k2.7-code",
+        "kimi-k2.7-code-highspeed",
+        "kimi-k2.6",
+        "kimi-k2-thinking"
       ],
       "cli_bin": "",
       "cli_cred": "",
@@ -75,8 +77,9 @@
       "default_model": "MiniMax-M3",
       "models": [
         "MiniMax-M3",
+        "MiniMax-M2.7",
         "MiniMax-M2.5",
-        "m2-her"
+        "MiniMax-M2-Her"
       ],
       "cli_bin": "",
       "cli_cred": "",
@@ -98,16 +101,16 @@
       "base_url_cn": "",
       "env_key": "",
       "env_keys": [],
-      "default_model": "claude-opus-4-8",
+      "default_model": "claude-opus-5",
       "models": [
+        "claude-opus-5",
+        "claude-fable-5",
+        "claude-sonnet-5",
         "claude-opus-4-8",
         "claude-opus-4-7",
         "claude-opus-4-6",
-        "claude-opus-4-5-20251101",
         "claude-sonnet-4-6",
-        "claude-sonnet-4-5-20250929",
-        "claude-haiku-4-5-20251001",
-        "claude-fable-5"
+        "claude-haiku-4-5"
       ],
       "cli_bin": "claude",
       "cli_cred": ".claude/.credentials.json",
@@ -138,16 +141,16 @@
       "base_url_cn": "",
       "env_key": "",
       "env_keys": [],
-      "default_model": "claude-opus-4-8",
+      "default_model": "claude-opus-5",
       "models": [
+        "claude-opus-5",
+        "claude-fable-5",
+        "claude-sonnet-5",
         "claude-opus-4-8",
         "claude-opus-4-7",
         "claude-opus-4-6",
-        "claude-opus-4-5-20251101",
         "claude-sonnet-4-6",
-        "claude-sonnet-4-5-20250929",
-        "claude-haiku-4-5-20251001",
-        "claude-fable-5"
+        "claude-haiku-4-5"
       ],
       "cli_bin": "",
       "cli_cred": ".claude/.credentials.json",
@@ -169,16 +172,16 @@
       "base_url_cn": "",
       "env_key": "ANTHROPIC_API_KEY",
       "env_keys": [],
-      "default_model": "claude-opus-4-8",
+      "default_model": "claude-opus-5",
       "models": [
+        "claude-opus-5",
+        "claude-fable-5",
+        "claude-sonnet-5",
         "claude-opus-4-8",
         "claude-opus-4-7",
         "claude-opus-4-6",
-        "claude-opus-4-5-20251101",
         "claude-sonnet-4-6",
-        "claude-sonnet-4-5-20250929",
-        "claude-haiku-4-5-20251001",
-        "claude-fable-5"
+        "claude-haiku-4-5"
       ],
       "cli_bin": "",
       "cli_cred": "",
@@ -200,13 +203,11 @@
       "base_url_cn": "",
       "env_key": "",
       "env_keys": [],
-      "default_model": "gpt-5.5",
+      "default_model": "gpt-5.6-terra",
       "models": [
-        "gpt-5.5",
-        "gpt-5.4",
-        "gpt-4o",
-        "gpt-4o-mini",
-        "o3-mini"
+        "gpt-5.6-terra",
+        "gpt-5.6-luna",
+        "gpt-5.5"
       ],
       "cli_bin": "codex",
       "cli_cred": ".codex/auth.json",
@@ -314,7 +315,7 @@
       "base_url_cn": "",
       "env_key": "OPENROUTER_API_KEY",
       "env_keys": [],
-      "default_model": "openai/gpt-4o-mini",
+      "default_model": "deepseek/deepseek-v4-flash",
       "models": [],
       "cli_bin": "",
       "cli_cred": "",
@@ -336,14 +337,15 @@
       "base_url_cn": "",
       "env_key": "OPENAI_API_KEY",
       "env_keys": [],
-      "default_model": "gpt-5.5",
+      "default_model": "gpt-5.6-sol",
       "models": [
+        "gpt-6-astra",
+        "gpt-5.6-sol",
+        "gpt-5.6-terra",
+        "gpt-5.6-luna",
         "gpt-5.5",
-        "gpt-5.5-pro",
-        "gpt-5.4",
-        "gpt-5.4-mini",
-        "gpt-4o",
-        "gpt-4o-mini"
+        "o3",
+        "o4-mini"
       ],
       "max_tokens_param": "max_completion_tokens",
       "cli_bin": "",
@@ -366,10 +368,10 @@
       "base_url_cn": "",
       "env_key": "DEEPSEEK_API_KEY",
       "env_keys": [],
-      "default_model": "deepseek-chat",
+      "default_model": "deepseek-flash",
       "models": [
-        "deepseek-chat",
-        "deepseek-reasoner"
+        "deepseek-flash",
+        "deepseek-v4-pro"
       ],
       "cli_bin": "",
       "cli_cred": "",
@@ -391,11 +393,13 @@
       "base_url_cn": "",
       "env_key": "XAI_API_KEY",
       "env_keys": [],
-      "default_model": "grok-4.3",
+      "default_model": "grok-4.6",
       "models": [
+        "grok-4.6",
+        "grok-4.5",
+        "grok-build-0.1",
         "grok-4.3",
-        "grok-4.20-multi-agent",
-        "grok-4.20-0309-reasoning"
+        "grok-4.20"
       ],
       "cli_bin": "",
       "cli_cred": "",
@@ -419,13 +423,16 @@
       "env_keys": [
         "GOOGLE_API_KEY"
       ],
-      "default_model": "gemini-2.5-pro",
+      "default_model": "gemini-3.8-flash",
       "models": [
+        "gemini-3.8-flash",
+        "gemini-3.8-flash-cyber",
+        "gemini-3.7-flash",
+        "gemini-3.6-flash",
         "gemini-3.5-flash",
         "gemini-3.1-pro-preview",
-        "gemini-2.5-pro",
-        "gemini-2.5-flash",
-        "gemini-2.0-flash"
+        "gemini-3-pro-deep-think",
+        "gemini-3.5-flash-lite"
       ],
       "cli_bin": "",
       "cli_cred": "",
@@ -447,13 +454,22 @@
       "base_url_cn": "",
       "env_key": "",
       "env_keys": [],
-      "default_model": "gemini-3.1-pro",
+      "default_model": "Gemini 3.8 Flash (Medium)",
       "models": [
-        "gemini-3.5-flash",
-        "gemini-3.1-pro",
-        "claude-4.6-sonnet",
-        "claude-4.6-opus",
-        "gpt-oss-120b"
+        "Gemini 3.8 Flash (Medium)",
+        "Gemini 3.8 Flash (High)",
+        "Gemini 3.8 Flash (Low)",
+        "Gemini 3.7 Flash (Medium)",
+        "Gemini 3.7 Flash (High)",
+        "Gemini 3.7 Flash (Low)",
+        "Gemini 3.6 Flash (Medium)",
+        "Gemini 3.6 Flash (High)",
+        "Gemini 3.6 Flash (Low)",
+        "Gemini 3.1 Pro (High)",
+        "Gemini 3.1 Pro (Low)",
+        "Claude Sonnet 4.6 (Thinking)",
+        "Claude Opus 4.6 (Thinking)",
+        "GPT-OSS 120B (Medium)"
       ],
       "cli_bin": "agy",
       "cli_cred": "",
