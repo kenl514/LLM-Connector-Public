@@ -1,6 +1,6 @@
 {
   "_comment": "SHARED LLM-provider registry — the source of truth for every app + language. Edit here; each language's thin client reads this file. Flags are explicit so non-Python clients don't need to re-derive them.",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "consent_notice": "Using your subscription through third-party software may conflict with some providers' terms of service. By enabling this, you confirm you have read the provider's Terms of Service and accept any risk to your own account.",
   "providers": [
     {
