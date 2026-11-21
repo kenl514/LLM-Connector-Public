@@ -1,6 +1,6 @@
 {
   "_comment": "SHARED LLM-provider registry — the source of truth for every app + language. Edit here; each language's thin client reads this file. Flags are explicit so non-Python clients don't need to re-derive them.",
-  "version": "0.5.2",
+  "version": "0.6.0",
   "consent_notice": "Using your subscription through third-party software may conflict with some providers' terms of service. By enabling this, you confirm you have read the provider's Terms of Service and accept any risk to your own account.",
   "providers": [
     {
@@ -18,11 +18,11 @@
       "models": [
         "glm-5.3",
         "glm-5.3-flash",
+        "glm-5.3-flashx",
         "glm-5.2",
-        "glm-5.2-fast",
         "glm-5.1",
-        "glm-5",
-        "glm-4.7-flash"
+        "glm-5-turbo",
+        "glm-5"
       ],
       "cli_bin": "",
       "cli_cred": "",
@@ -34,7 +34,21 @@
       "needs_consent": false,
       "install": {},
       "login_args": [],
-      "needs_pty": false
+      "needs_pty": false,
+      "effort": {
+        "param": "reasoning_effort",
+        "levels": [
+          "none",
+          "minimal",
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default": "",
+        "note": "Z.AI validates these on glm-5.2/5.3 (probed live 2026-11-20); unset = the model's own default. glm-4.x ignores it."
+      }
     },
     {
       "name": "kimi",
@@ -101,16 +115,16 @@
       "base_url_cn": "",
       "env_key": "",
       "env_keys": [],
-      "default_model": "claude-opus-5",
+      "default_model": "claude-opus-5-5",
       "models": [
+        "claude-opus-5-5",
+        "claude-fable-5-2",
+        "claude-fable-5-1",
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5",
         "claude-opus-5",
-        "claude-fable-5",
         "claude-sonnet-5",
-        "claude-opus-4-8",
-        "claude-opus-4-7",
-        "claude-opus-4-6",
-        "claude-sonnet-4-6",
-        "claude-haiku-4-5"
+        "claude-opus-4-8"
       ],
       "cli_bin": "claude",
       "cli_cred": ".claude/.credentials.json",
@@ -131,7 +145,20 @@
         "linux": "npm install -g @anthropic-ai/claude-code"
       },
       "login_args": [],
-      "needs_pty": false
+      "needs_pty": false,
+      "effort": {
+        "param": "--effort",
+        "cli_arg": "--effort",
+        "levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default": "",
+        "note": "Claude Code CLI --effort (2.1.319 help). Claude Code < 2.1.280 cannot use claude-opus-5-5: run `claude update`."
+      }
     },
     {
       "name": "claude-oauth",
@@ -141,16 +168,16 @@
       "base_url_cn": "",
       "env_key": "",
       "env_keys": [],
-      "default_model": "claude-opus-5",
+      "default_model": "claude-opus-5-5",
       "models": [
+        "claude-opus-5-5",
+        "claude-fable-5-2",
+        "claude-fable-5-1",
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5",
         "claude-opus-5",
-        "claude-fable-5",
         "claude-sonnet-5",
-        "claude-opus-4-8",
-        "claude-opus-4-7",
-        "claude-opus-4-6",
-        "claude-sonnet-4-6",
-        "claude-haiku-4-5"
+        "claude-opus-4-8"
       ],
       "cli_bin": "",
       "cli_cred": ".claude/.credentials.json",
@@ -162,7 +189,19 @@
       "needs_consent": true,
       "install": {},
       "login_args": [],
-      "needs_pty": false
+      "needs_pty": false,
+      "effort": {
+        "param": "output_config.effort",
+        "levels": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "default": "",
+        "note": "Messages API output_config.effort (probed live 2026-11-20). Unset = the model's default (Opus 5.5: medium). Thinking can't be disabled on Opus 5.5; temperature is rejected."
+      }
     },
     {
       "name": "claude-api",
@@ -172,16 +211,16 @@
       "base_url_cn": "",
       "env_key": "ANTHROPIC_API_KEY",
       "env_keys": [],
-      "default_model": "claude-opus-5",
+      "default_model": "claude-opus-5-5",
       "models": [
+        "claude-opus-5-5",
+        "claude-fable-5-2",
+        "claude-fable-5-1",
+        "claude-sonnet-5-5",
+        "claude-haiku-5-5",
         "claude-opus-5",
-        "claude-fable-5",
         "claude-sonnet-5",
-        "claude-opus-4-8",
-        "claude-opus-4-7",
-        "claude-opus-4-6",
-        "claude-sonnet-4-6",
-        "claude-haiku-4-5"
+        "claude-opus-4-8"
       ],
       "cli_bin": "",
       "cli_cred": "",
